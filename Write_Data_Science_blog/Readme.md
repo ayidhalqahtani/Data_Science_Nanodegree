@@ -30,5 +30,6 @@ you can find the answers for these questions in the notebook in the same reposit
 Results
 
 
-you can find the results of the questions at the medium bolg https://medium.com/p/a426563757f4/edit .
+you can find the results of the questions at the medium bolg in the below link:
+https://medium.com/@ayidh1/seattle-airbnb-data-analysis-a426563757f4
 
