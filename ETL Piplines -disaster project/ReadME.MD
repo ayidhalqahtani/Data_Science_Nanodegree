@@ -25,8 +25,8 @@ classes using model.
 
 
 * in workspace folder there are three folders which contain: 
- - app folder you can see run.py
- - data folder contains data and process_data.py file
- - models contains save model and train_classifier.py file 
+ - app folder you can see run.py to run the app 
+ - data folder contains data and process_data.py file  to clean data and prepare it for the model.
+ - models contains save model and train_classifier.py file to build , train , test and save the mdoel.
  
  
