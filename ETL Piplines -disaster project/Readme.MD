@@ -5,10 +5,22 @@
 This project is about Data Engineering and create data engineering piplines and machine learning pipline to build a model for API that classifies Disaster messages into classes.
 
 2.Project contents : 
+
+
+
    ETL Piplines: 
    It contains process_data.py file which load messages and categories dataset and then clean data and prepare it for the model.
+   
+   
+   
+   
+   
    ML Piplines:
    It contains train_classifier.py file which load the database sqlite and then  build , train , test and extract the mdoel and save it to be used in run.py.
+   
+   
+   
+   
    Flask Web App:
    Here, where the user write the messages and the app will classify them into categories and here are screeshots of the app
    
