@@ -44,24 +44,62 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    releated_message = df[df['related']==1].groupby('genre').count()['message']
+    not_releated = df[df['related']==0].groupby('genre').count()['message']
+    gnames = list(releated_message.index)
+    
+    # Calculate proportion of each category with label = 1
+    categories = df.drop(['id', 'message', 'original', 'genre'], axis = 1).sum()/len(df)
+    categories = categories.sort_values(ascending = False)
+    categories_names = list(categories.index)
+    
+    
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
             'data': [
                 Bar(
-                    x=genre_names,
-                    y=genre_counts
+                    x=gnames,
+                    y=releated_message,
+                    name = 'Related'
+                ),
+                
+                Bar(
+                    x=gnames,
+                    y=not_releated,
+                    name = 'Not Related Messages'
                 )
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Distribution of Messages  Genre and Related Status',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
                     'title': "Genre"
+                },
+                'barmode': 'group'
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=categories_names,
+                    y=categories
+                )
+            ],
+
+            'layout': {
+                'title': 'Proportion of Messages by Category',
+                'yaxis': {
+                    'title': "Proportion"
+                },
+                'xaxis': {
+                    'title': "Category",
+                    'tickangle': -45
                 }
             }
         }
